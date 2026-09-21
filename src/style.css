@@ -1,0 +1,313 @@
+:root {
+  --ink: #202322;
+  --surface: #2b2e2d;
+  --surface-deep: #252827;
+  --paper: #f7f4ee;
+  --paper-deep: #ebe8e0;
+  --paper-alt: #f1eee7;
+  --text-soft: #6d706d;
+  --text-muted: #92958f;
+  --accent: #ef4b32;
+  --accent-deep: #d9432d;
+  --line: rgba(32, 35, 34, .16);
+  --line-light: rgba(255, 255, 255, .18);
+  --shadow: rgba(32, 35, 34, .14);
+  --sans: "Manrope", Arial, sans-serif;
+  --display: "Roboto Condensed", Arial, sans-serif;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; overflow-x: hidden; background: var(--paper); color: var(--ink); font: 15px/1.55 var(--sans); }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+.container { width: min(1240px, calc(100% - 64px)); margin: 0 auto; }
+.skip-link { position: fixed; top: -4rem; left: 1rem; z-index: 20; padding: .7rem 1rem; background: var(--accent); color: var(--ink); }
+.skip-link:focus { top: 1rem; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+::selection { background: var(--accent); color: var(--ink); }
+
+.site-header { position: absolute; inset: 0 0 auto; z-index: 5; padding: 22px 0; color: var(--paper); }
+.header-inner, .footer-inner { display: flex; align-items: center; gap: 24px; }
+.brand { font: 800 28px/1 var(--display); letter-spacing: -1px; white-space: nowrap; }
+.brand span { color: var(--accent); }
+.brand sup { margin-left: 4px; color: currentColor; font: 700 8px/1 var(--sans); letter-spacing: 1px; vertical-align: top; }
+.header-location { margin: 0 auto 0 2px; font-size: 10px; line-height: 1.45; white-space: nowrap; }
+.header-location span { color: rgba(247, 244, 238, .62); }
+.nav { display: flex; gap: 22px; font-size: 11px; font-weight: 800; }
+.nav a, .header-phone { transition: color .2s var(--ease); }
+.nav a:hover, .header-phone:hover { color: var(--accent); }
+.header-phone { font-size: 13px; font-weight: 800; white-space: nowrap; }
+.menu-toggle { display: none; }
+
+.hero { position: relative; min-height: 760px; padding: 158px 0 78px; overflow: hidden; background: var(--ink); color: var(--paper); }
+.hero::before { position: absolute; top: -420px; right: -350px; width: 900px; height: 900px; border: 1px solid rgba(255, 255, 255, .08); border-radius: 50%; content: ""; }
+.hero-grain { position: absolute; inset: 0; pointer-events: none; opacity: .16; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E"); }
+.hero-grid { position: relative; display: grid; grid-template-columns: 1fr .9fr; align-items: center; min-height: 524px; }
+.eyebrow, .section-kicker { margin: 0 0 28px; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+.eyebrow span { display: inline-block; width: 25px; height: 1px; margin: 0 8px 4px 0; background: var(--accent); }
+h1, h2 { margin: 0; font-family: var(--display); font-weight: 800; letter-spacing: -3px; line-height: .91; text-wrap: balance; }
+h1 { font-size: clamp(60px, 7.4vw, 110px); }
+h2 { font-size: clamp(52px, 6.1vw, 88px); }
+h1 em, h2 em { color: var(--accent); font-style: normal; }
+.hero-lead { margin: 24px 0 0; font: 800 20px/1.1 var(--display); }
+.hero-text { max-width: 550px; margin: 16px 0 0; color: rgba(247, 244, 238, .74); font-size: 12px; }
+.hero-company { margin-top: 10px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 32px; padding: 15px 18px; font-size: 12px; font-weight: 800; letter-spacing: .2px; transition: transform .2s var(--ease), background .2s var(--ease), color .2s var(--ease); }
+.button:hover { transform: translateY(-2px); }
+.button:active { transform: scale(.98); }
+.button-accent { background: var(--accent); color: var(--ink); }
+.button-accent:hover { background: var(--accent-deep); }
+.button-outline { border: 1px solid rgba(247, 244, 238, .3); }
+.button-outline:hover { background: var(--paper); color: var(--ink); }
+.hero-visual { position: relative; height: 485px; isolation: isolate; }
+.hero-metal { position: absolute; top: 25px; right: 45px; z-index: -2; width: 390px; height: 430px; background: linear-gradient(120deg, #373c3a, #1a1d1c 44%, #505552 45%, #242827 57%, #181a19); box-shadow: -25px 25px 0 rgba(239, 75, 50, .18); clip-path: polygon(17% 0, 100% 9%, 89% 100%, 0 86%); transform: rotate(4deg); }
+.hero-ring { position: absolute; z-index: -1; border: 1px solid rgba(239, 75, 50, .7); border-radius: 50%; }
+.ring-one { top: 52px; right: 20px; width: 420px; height: 420px; }
+.ring-two { top: 116px; right: 82px; width: 295px; height: 295px; border-color: rgba(255, 255, 255, .18); }
+.can { position: absolute; top: 80px; right: 137px; width: 205px; height: 345px; background: linear-gradient(90deg, #a9aaa3 0%, #292d2c 12%, #444946 56%, #1b1e1d 100%); box-shadow: 20px 24px 32px rgba(0, 0, 0, .4); clip-path: polygon(11% 0, 88% 2%, 99% 99%, 2% 97%); transform: rotate(9deg); }
+.can-top { position: absolute; top: -14px; right: 20px; left: 20px; height: 24px; background: #5e625f; clip-path: polygon(10% 100%, 0 38%, 14% 0, 87% 1%, 100% 35%, 90% 100%); }
+.can-label { position: absolute; top: 71px; right: 16px; left: 16px; height: 173px; padding: 15px; background: var(--accent); color: var(--ink); font: 800 38px/.8 var(--display); letter-spacing: -2px; }
+.can-label b { font-size: 65px; }
+.can-label small { display: block; margin-top: 18px; font: 800 8px var(--sans); letter-spacing: 1px; }
+
+.section { padding: 108px 0; }
+.trust { padding-bottom: 82px; }
+.trust-grid { display: grid; grid-template-columns: .9fr 1.7fr; gap: 70px; align-items: start; }
+.trust-intro h2 { font-size: 62px; }
+.trust-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
+.trust-list article { position: relative; min-height: 184px; padding: 22px 20px 20px; border: 1px solid rgba(32, 35, 34, .04); background: var(--paper-deep); }
+.trust-list article > img { position: absolute; top: 19px; right: 19px; width: 42px; height: 42px; object-fit: contain; }
+.trust-num { color: var(--accent); font-size: 10px; font-weight: 700; }
+.trust-list h3 { margin: 18px 0 8px; font: 800 17px var(--display); letter-spacing: .2px; }
+.trust-list p { max-width: 225px; margin: 0; color: var(--text-soft); font-size: 12px; }
+
+.services { background: var(--ink); color: var(--paper); }
+.section-heading { margin-bottom: 48px; }
+.service-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 16px; }
+.service-card { position: relative; display: flex; min-width: 0; min-height: 420px; flex-direction: column; align-items: flex-start; padding: 29px; overflow: hidden; color: inherit; transition: transform .45s var(--ease); }
+.service-card:hover { transform: translateY(-6px); }
+.service-card:focus-visible { outline: 3px solid var(--paper); outline-offset: -6px; }
+.service-oil { background: var(--accent); color: var(--ink); }
+.service-oil:focus-visible { outline-color: var(--ink); }
+.service-tire { background: var(--surface); }
+.service-card h3 { position: relative; z-index: 1; max-width: 100%; margin: 20px 0 22px; font-size: clamp(55px, 6vw, 90px); line-height: .9; letter-spacing: -2px; overflow-wrap: anywhere; text-wrap: balance; }
+.service-tire h3 { font-size: clamp(40px, 4.8vw, 78px); white-space: nowrap; overflow-wrap: normal; text-wrap: nowrap; }
+.service-card p { position: relative; z-index: 1; width: min(290px, 80%); margin: 0 0 24px; font-size: 12px; line-height: 1.6; }
+.text-link { position: relative; z-index: 2; margin-top: auto; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 12px; font-weight: 800; }
+.text-link span { margin-left: 25px; }
+.service-mark { position: absolute; right: -12px; bottom: 22px; opacity: .12; font: 800 222px/.7 var(--display); letter-spacing: -15px; }
+.tire-shape { position: absolute; right: -47px; bottom: -47px; width: 305px; height: 305px; border: 45px solid #1a1d1c; border-radius: 50%; box-shadow: inset 0 0 0 22px #6c716d, 0 0 0 1px rgba(255, 255, 255, .12); }
+.tire-shape::after { position: absolute; inset: 35px; border: 1px solid #898e89; border-radius: 50%; content: ""; }
+.service-gallery { background: var(--paper); }
+.gallery-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: end; margin-bottom: 42px; }
+.gallery-head h2 { font-size: clamp(54px, 6vw, 82px); }
+.gallery-intro { max-width: 480px; margin: 0 0 4px; color: var(--text-soft); font-size: 13px; line-height: 1.7; }
+.gallery-carousel { max-width: 960px; margin: 0 auto; }
+.gallery-viewport { overflow: hidden; border: 1px solid var(--line); background: var(--surface-deep); box-shadow: 0 18px 36px var(--shadow); }
+.gallery-track { display: flex; transition: transform .55s var(--ease); will-change: transform; }
+.gallery-slide { position: relative; flex: 0 0 100%; min-width: 0; height: clamp(360px, 52vw, 590px); margin: 0; overflow: hidden; background: var(--surface-deep); }
+.gallery-slide::after { position: absolute; inset: 35% 0 0; background: linear-gradient(180deg, transparent, rgba(32, 35, 34, .82)); content: ""; pointer-events: none; }
+.gallery-slide img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s var(--ease); }
+.gallery-slide:hover img { transform: scale(1.025); }
+.gallery-slide figcaption { position: absolute; right: 28px; bottom: 24px; left: 28px; z-index: 1; color: var(--paper); font: 700 clamp(18px, 2.2vw, 28px)/1.1 var(--display); }
+.gallery-slide figcaption span { margin-right: 18px; color: var(--accent); font: 800 11px/1 var(--sans); letter-spacing: 1px; vertical-align: middle; }
+.gallery-controls { display: flex; align-items: center; gap: 18px; padding-top: 18px; }
+.gallery-arrow { display: inline-grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border: 1px solid var(--line); background: transparent; color: var(--ink); font: 700 19px/1 var(--sans); cursor: pointer; transition: border-color .2s var(--ease), background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease); }
+.gallery-arrow:hover { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.gallery-arrow:active { transform: scale(.96); }
+.gallery-dots { display: flex; gap: 8px; align-items: center; }
+.gallery-dots button { width: 30px; height: 2px; padding: 0; border: 0; background: var(--line); cursor: pointer; transition: width .25s var(--ease), background .25s var(--ease); }
+.gallery-dots button[aria-current="true"] { width: 52px; background: var(--accent); }
+.gallery-counter { margin-left: auto; color: var(--text-soft); font-size: 10px; font-weight: 800; letter-spacing: 1px; }
+.gallery-counter [data-carousel-current] { color: var(--ink); }
+
+.pricing, .tire-pricing { background: var(--paper-deep); }
+.price-head { margin-bottom: 48px; }
+.price-table { border-top: 1px solid var(--line); }
+.price-row { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: start; padding: 19px 0; border-bottom: 1px solid var(--line); transition: padding .25s var(--ease), background .25s var(--ease); }
+.price-row:hover { padding-right: 12px; padding-left: 12px; background: rgba(255, 255, 255, .4); }
+.price-row h3 { margin: 0; font: 700 18px/1.2 var(--display); }
+.price-row p { margin: 5px 0 0; color: var(--text-soft); font-size: 11px; }
+.price-row strong, .oil-card strong { font: 800 20px var(--display); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tire-pricing { padding-top: 0; }
+.tire-wrap { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; padding-top: 76px; border-top: 1px solid var(--line); }
+.tire-wrap h2 { font-size: 65px; line-height: .9; white-space: nowrap; }
+.tire-table-head, .tire-row { display: grid; grid-template-columns: .8fr 1fr 1.2fr; gap: 15px; padding: 15px 0; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.tire-table-head { color: var(--text-soft); font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.tire-row { font: 700 18px var(--display); }
+
+.bonus { padding: 70px 0; overflow: hidden; background: var(--accent); }
+.bonus-inner { position: relative; display: grid; grid-template-columns: minmax(0, 480px) 1fr; align-items: center; min-height: 275px; }
+.bonus h2 { font-size: 68px; }
+.bonus h2 em { color: var(--ink); }
+.bonus p { max-width: 370px; margin: 24px 0 0; font-size: 12px; }
+.bonus-percent { position: absolute; top: 50%; right: 2%; opacity: .14; transform: translateY(-50%); font: 800 clamp(190px, 22vw, 320px)/.7 var(--display); letter-spacing: -12px; }
+.bonus-percent small { font-size: .36em; vertical-align: top; }
+
+.oils { background: var(--paper); }
+.oil-head { margin-bottom: 48px; }
+.oil-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.oil-card { display: flex; min-height: 245px; flex-direction: column; padding: 22px 20px 25px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s var(--ease), transform .25s var(--ease); }
+.oil-card:nth-child(3n) { border-right: 0; }
+.oil-card:hover { background: var(--paper-deep); transform: translateY(-3px); }
+.oil-card-top { display: flex; justify-content: space-between; color: var(--text-soft); font-size: 10px; }
+.oil-card h3 { margin: 45px 0 13px; font: 800 20px/1 var(--display); }
+.oil-card > p { margin: 0; color: var(--text-soft); font-size: 11px; }
+.oil-card details { margin-top: auto; padding-top: 18px; }
+.oil-card summary, .faq-list summary { display: flex; cursor: pointer; justify-content: space-between; list-style: none; font-size: 10px; font-weight: 800; letter-spacing: .75px; text-transform: uppercase; }
+.oil-card summary::-webkit-details-marker, .faq-list summary::-webkit-details-marker { display: none; }
+.oil-card details p { margin: 10px 0 0; color: var(--text-soft); font-size: 10px; }
+.oil-card details[open] summary span, .faq-list details[open] summary span { transform: rotate(45deg); }
+
+.faq { padding: 76px 0; background: var(--surface); color: var(--paper); }
+.faq-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; align-items: start; }
+.faq-layout h2 { font-size: 63px; line-height: .92; }
+.faq-list { border-top: 1px solid var(--line-light); }
+.faq-list details { padding: 20px 0; border-bottom: 1px solid var(--line-light); }
+.faq-list summary { font: 700 21px/1.2 var(--display); letter-spacing: 0; text-transform: none; }
+.faq-list summary span { font: 400 27px/1 var(--sans); transition: transform .2s var(--ease); }
+.faq-list p { max-width: 600px; margin: 18px 0 0; color: rgba(247, 244, 238, .72); font-size: 12px; }
+
+.reviews { padding: 76px 0; background: var(--paper-deep); }
+.review-layout { display: grid; grid-template-columns: .55fr 1.45fr; gap: 42px; align-items: start; }
+.review-layout h2 { font-size: clamp(50px, 5vw, 68px); line-height: .92; }
+.review-widget { padding: 16px; border: 1px solid rgba(32, 35, 34, .08); background: var(--paper); box-shadow: 0 12px 30px var(--shadow); }
+.review-fallback { display: flex; min-height: 190px; flex-direction: column; align-items: flex-start; justify-content: center; padding: 28px; background: var(--paper-alt); }
+.review-badge { margin-bottom: 20px; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
+.review-fallback strong { font: 800 28px/1 var(--display); }
+.review-fallback p { max-width: 470px; margin: 12px 0 0; color: var(--text-soft); font-size: 12px; }
+.review-fallback-link, .review-more, .review-embed summary { font-size: 11px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; }
+.review-fallback-link { margin-top: 22px; color: var(--accent-deep); }
+.review-fallback-link span, .review-more span, .review-embed summary span { margin-left: 10px; }
+.review-embed { margin-top: 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.review-embed summary { display: flex; cursor: pointer; justify-content: space-between; padding: 14px 4px; list-style: none; }
+.review-embed summary::-webkit-details-marker { display: none; }
+.review-embed summary span { font: 400 20px/1 var(--sans); transition: transform .2s var(--ease); }
+.review-embed[open] summary span { transform: rotate(45deg); }
+.review-widget iframe { display: block; width: 100%; height: 320px; margin: 0 0 16px; border: 0; background: var(--paper-alt); }
+.review-more { display: inline-block; margin: 14px 4px 2px; }
+
+.contacts { padding: 104px 0; background: var(--ink); color: var(--paper); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.contacts h2 { font-size: 74px; }
+.contact-phone { display: block; margin: 58px 0 12px; color: var(--accent); font: 800 clamp(29px, 4vw, 53px)/1 var(--display); letter-spacing: -1.5px; }
+.contact-email { border-bottom: 1px solid rgba(247, 244, 238, .35); font-size: 13px; }
+.contact-info { display: grid; grid-template-columns: 1fr 1fr; gap: 52px 30px; padding-top: 66px; }
+.contact-info span { color: var(--text-muted); font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.contact-info p, .address-link { margin: 9px 0; font: 700 18px/1.2 var(--display); }
+.address-link { display: block; transition: color .2s var(--ease); }
+.address-link:hover { color: var(--accent); }
+.contact-actions { display: flex; grid-column: span 2; align-items: center; gap: 19px; }
+.telegram-placeholder { color: var(--text-muted); font-size: 11px; font-weight: 700; }
+.map-link { grid-column: span 2; padding-top: 18px; border-top: 1px solid var(--line-light); font-size: 11px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; }
+.map-link span { margin-left: 18px; color: var(--accent); }
+footer { padding: 25px 0 82px; border-top: 1px solid rgba(255, 255, 255, .13); background: var(--ink); color: var(--text-muted); font-size: 10px; }
+footer .brand { color: var(--paper); font-size: 20px; }
+.footer-inner { justify-content: space-between; }
+.mobile-bar { display: none; }
+
+.reveal, .service-card, .price-row, .oil-card { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1050px) {
+  .header-location { display: none; }
+  .nav { gap: 15px; }
+  .hero-grid { grid-template-columns: 1.1fr .9fr; }
+}
+
+@media (max-width: 800px) {
+  body { font-size: 14px; }
+  .container { width: min(100% - 38px, 640px); }
+  .site-header { padding: 18px 0; }
+  .nav, .header-phone { display: none; }
+  .menu-toggle { display: block; margin-left: auto; font-size: 11px; font-weight: 800; }
+  .menu-toggle span { margin-left: 4px; color: var(--accent); }
+  .hero { min-height: 720px; padding: 126px 0 58px; }
+  .hero-grid { display: block; min-height: 0; }
+  .hero h1, .section-heading h2, .price-head h2, .oil-head h2, .contacts h2 { font-size: clamp(54px, 16vw, 76px); letter-spacing: -2.2px; }
+  .hero-text { font-size: 12px; }
+  .hero-visual { height: 265px; margin: 24px -20px 0; }
+  .hero-metal { top: 10px; right: 20px; width: 240px; height: 250px; }
+  .ring-one { top: 25px; right: 24px; width: 250px; height: 250px; }
+  .ring-two { top: 59px; right: 60px; width: 178px; height: 178px; }
+  .can { top: 40px; right: 75px; width: 126px; height: 215px; }
+  .can-label { top: 42px; right: 10px; left: 10px; height: 108px; padding: 10px; font-size: 24px; }
+  .can-label b { font-size: 39px; }
+  .can-label small { margin-top: 10px; font-size: 5px; }
+  .section { padding: 76px 0; }
+  .trust { padding-bottom: 64px; }
+  .trust-grid, .faq-layout, .contact-grid { display: block; }
+  .trust-intro h2 { margin-bottom: 40px; font-size: 52px; }
+  .trust-list { gap: 0 20px; }
+  .trust-list article { min-height: 170px; padding: 18px 15px; }
+  .trust-list article > img { top: 15px; right: 14px; width: 34px; height: 34px; }
+  .section-heading { margin-bottom: 38px; }
+  .service-grid { display: block; }
+  .service-card { min-height: 370px; margin-bottom: 12px; padding: 23px; }
+  .service-card h3 { margin: 18px 0 20px; line-height: .93; }
+  .service-mark { font-size: 165px; }
+  .tire-shape { width: 235px; height: 235px; border-width: 35px; }
+  .gallery-head { display: block; margin-bottom: 32px; }
+  .gallery-head h2 { margin-bottom: 24px; }
+  .gallery-intro { font-size: 12px; }
+  .gallery-carousel { margin: 0; }
+  .gallery-slide { height: min(116vw, 430px); }
+  .gallery-slide figcaption { right: 18px; bottom: 18px; left: 18px; }
+  .gallery-controls { gap: 12px; }
+  .gallery-dots { gap: 5px; }
+  .gallery-dots button { width: 20px; }
+  .gallery-dots button[aria-current="true"] { width: 34px; }
+  .gallery-counter { font-size: 9px; }
+  .price-head, .oil-head { margin-bottom: 38px; }
+  .price-row { grid-template-columns: 1fr auto; padding: 16px 0; }
+  .price-row h3 { font-size: 17px; }
+  .price-row strong { font-size: 18px; }
+  .tire-wrap { display: block; padding-top: 60px; }
+  .tire-wrap h2 { font-size: clamp(48px, 14vw, 62px); white-space: normal; }
+  .tire-table { margin-top: 38px; }
+  .tire-table-head, .tire-row { grid-template-columns: .55fr .8fr 1fr; font-size: 15px; }
+  .tire-table-head { font-size: 8px; }
+  .bonus { padding: 60px 0; }
+  .bonus-inner { display: block; min-height: 250px; }
+  .bonus h2 { position: relative; z-index: 1; font-size: 54px; }
+  .bonus p { position: relative; z-index: 1; max-width: 260px; }
+  .bonus-percent { right: -8px; bottom: -14px; top: auto; transform: none; font-size: 170px; }
+  .oil-grid { grid-template-columns: 1fr 1fr; }
+  .oil-card { min-height: 250px; padding: 18px 14px; }
+  .oil-card:nth-child(3n) { border-right: 1px solid var(--line); }
+  .oil-card:nth-child(2n) { border-right: 0; }
+  .oil-card h3 { margin-top: 34px; font-size: 18px; }
+  .faq, .reviews { padding: 62px 0; }
+  .faq-layout h2 { margin-bottom: 42px; font-size: 54px; }
+  .review-layout { display: block; }
+  .review-layout h2 { margin-bottom: 30px; }
+  .review-widget { padding: 10px; }
+  .review-fallback { min-height: 180px; padding: 22px; }
+  .review-fallback strong { font-size: 25px; }
+  .review-widget iframe { height: 260px; }
+  .contacts { padding: 82px 0; }
+  .contact-info { gap: 34px 20px; padding-top: 55px; }
+  .mobile-bar { position: fixed; right: 0; bottom: 0; left: 0; z-index: 8; display: flex; gap: 8px; padding: 9px 13px; background: var(--paper); box-shadow: 0 -8px 28px var(--shadow); }
+  .mobile-bar a { flex: 1; padding: 13px 5px; background: var(--ink); color: var(--paper); font-size: 11px; font-weight: 800; text-align: center; }
+  .mobile-bar a:last-child { background: var(--accent); color: var(--ink); }
+  footer { padding-bottom: 88px; }
+  .footer-inner { gap: 10px; }
+  .footer-inner p { display: none; }
+}
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 52px; }
+  .oil-grid { grid-template-columns: 1fr; }
+  .oil-card { border-right: 0 !important; }
+  .contact-info { grid-template-columns: 1fr; }
+  .contact-actions, .map-link { grid-column: span 1; }
+  .contact-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+  .reveal, .service-card, .price-row, .oil-card { opacity: 1; transform: none; }
+}
