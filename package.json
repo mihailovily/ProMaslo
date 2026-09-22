@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "vite-plugin-pug": "^0.4.1"
   }
 }

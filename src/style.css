@@ -174,21 +174,8 @@ h1 em, h2 em { color: var(--accent); font-style: normal; }
 .reviews { padding: 76px 0; background: var(--paper-deep); }
 .review-layout { display: grid; grid-template-columns: .55fr 1.45fr; gap: 42px; align-items: start; }
 .review-layout h2 { font-size: clamp(50px, 5vw, 68px); line-height: .92; }
-.review-widget { padding: 16px; border: 1px solid rgba(32, 35, 34, .08); background: var(--paper); box-shadow: 0 12px 30px var(--shadow); }
-.review-fallback { display: flex; min-height: 190px; flex-direction: column; align-items: flex-start; justify-content: center; padding: 28px; background: var(--paper-alt); }
-.review-badge { margin-bottom: 20px; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
-.review-fallback strong { font: 800 28px/1 var(--display); }
-.review-fallback p { max-width: 470px; margin: 12px 0 0; color: var(--text-soft); font-size: 12px; }
-.review-fallback-link, .review-more, .review-embed summary { font-size: 11px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; }
-.review-fallback-link { margin-top: 22px; color: var(--accent-deep); }
-.review-fallback-link span, .review-more span, .review-embed summary span { margin-left: 10px; }
-.review-embed { margin-top: 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.review-embed summary { display: flex; cursor: pointer; justify-content: space-between; padding: 14px 4px; list-style: none; }
-.review-embed summary::-webkit-details-marker { display: none; }
-.review-embed summary span { font: 400 20px/1 var(--sans); transition: transform .2s var(--ease); }
-.review-embed[open] summary span { transform: rotate(45deg); }
-.review-widget iframe { display: block; width: 100%; height: 320px; margin: 0 0 16px; border: 0; background: var(--paper-alt); }
-.review-more { display: inline-block; margin: 14px 4px 2px; }
+.review-widget { overflow: hidden; border: 1px solid rgba(32, 35, 34, .08); background: var(--paper); box-shadow: 0 12px 30px var(--shadow); }
+.review-widget iframe { display: block; width: 100%; height: 320px; border: 0; background: var(--paper-alt); }
 
 .contacts { padding: 104px 0; background: var(--ink); color: var(--paper); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
@@ -284,9 +271,6 @@ footer .brand { color: var(--paper); font-size: 20px; }
   .faq-layout h2 { margin-bottom: 42px; font-size: 54px; }
   .review-layout { display: block; }
   .review-layout h2 { margin-bottom: 30px; }
-  .review-widget { padding: 10px; }
-  .review-fallback { min-height: 180px; padding: 22px; }
-  .review-fallback strong { font-size: 25px; }
   .review-widget iframe { height: 260px; }
   .contacts { padding: 82px 0; }
   .contact-info { gap: 34px 20px; padding-top: 55px; }

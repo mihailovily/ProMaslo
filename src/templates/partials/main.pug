@@ -1,0 +1,215 @@
+section#top.hero
+  .hero-grain(aria-hidden='true')
+  .container.hero-grid
+    .hero-copy.reveal
+      p.eyebrow
+        span
+        | Шафировский путепровод, 8а
+      h1
+        | Замена масла
+        br
+        em в Санкт-Петербурге
+      p.hero-lead За 30 минут и дешевле чем у конкурентов!
+      p.hero-text Мы занимаемся профессиональной заменой масла и других технических жидкостей в автомобилях любых марок. Используем только оригинальные масла, жидкости, фильтры известных и проверенных производителей. Работаем с официальными дистрибьюторами масел Mobil, Castrol, Shell, Liqui Moly, Elf, Petro-Canada, ZIC, Teboil, Taif, Idemitsu, Kixx.
+      p.hero-text.hero-company Компания «Pro Масло» предоставляет качественный сервис по доступной цене! Удобно, доступно!
+      .hero-actions
+        a.button.button-accent(href='tel:+79119222063')
+          | Позвонить 
+          span ↗
+        a.button.button-outline(href='https://wa.me/79119222063', target='_blank', rel='noreferrer') Написать в WhatsApp
+    .hero-visual.reveal.reveal-delay(aria-label='Сервисный пост Pro Масло')
+      .hero-metal
+      .hero-ring.ring-one
+      .hero-ring.ring-two
+      .can
+        span.can-top
+        span.can-label
+          | PRO
+          br
+          b OIL
+          small ENGINE SERVICE
+
+section.trust.section(aria-label='Преимущества')
+  .container.trust-grid
+    .trust-intro
+      h2
+        | Почему
+        br
+        em Pro Масло.
+    .trust-list
+      article
+        img(src='/images/benefit-speed.svg', alt='')
+        span.trust-num 01
+        h3 Оперативность
+        p Замена масла вместе с фильтром занимает не более 30 минут.
+      article
+        img(src='/images/27as_oil_1.png', alt='')
+        span.trust-num 02
+        h3 Качество
+        p Только оригинальные масла и фильтры известных производителей. Никаких подделок.
+      article
+        img(src='/images/benefit-service.svg', alt='')
+        span.trust-num 03
+        h3 Профессионализм
+        p Квалифицированный, аккуратный и внимательный к мелочам персонал.
+      article
+        img(src='/images/Group111.png', alt='')
+        span.trust-num 04
+        h3 Честная цена
+        p Стоимость обслуживания ниже, чем у конкурентов.
+
+section#services.services.section
+  .container
+    .section-heading
+      h2 Услуги.
+    .service-grid
+      a.service-card.service-oil(href='#prices', aria-label='Перейти к ценам на замену масла')
+        h3 Замена масла
+        p Профессиональная замена масла и других технических жидкостей в автомобилях любых марок.
+        span.text-link
+          | Цены на услуги 
+          span ↗
+        .service-mark(aria-hidden='true') OIL
+      a.service-card.service-tire(href='#tire-prices', aria-label='Перейти к ценам на шиномонтаж')
+        h3 Шиномонтаж
+        p Легковой / кроссоверы / минивэны.
+        span.text-link
+          | Цены на шиномонтаж 
+          span ↗
+        .tire-shape(aria-hidden='true')
+
+section#prices.pricing.section
+  .container
+    .price-head
+      h2
+        | Цены на замену масла
+        br
+        em в Санкт-Петербурге.
+    #oil-prices.price-table
+
+section#tire-prices.tire-pricing.section
+  .container.tire-wrap
+    h2 Шиномонтаж.
+    .tire-table
+      .tire-table-head
+        span Диаметр
+        span Легковой
+        span Кроссоверы / минивэны
+      #tire-rows
+
+section.bonus
+  .container.bonus-inner
+    div
+      h2
+        | Выгодное
+        br
+        em знакомство.
+      p При первом / последующих посещениях и покупке масла или фильтра возвращаем 5% от стоимости товаров на бонусную карту. При следующей замене Вы сможете потратить их на покупку масла и фильтров у нас.
+    span.bonus-percent
+      | 5
+      small %
+
+section#oils.oils.section
+  .container
+    .oil-head
+      div
+        p.section-kicker Стоимость масла
+        h2
+          | По цене производителя,
+          br
+          em дешевле только даром!
+    #oil-grid.oil-grid
+
+section#gallery.service-gallery.section(aria-labelledby='gallery-title')
+  .container
+    .gallery-head
+      div
+        p.section-kicker Сервис в работе
+        h2#gallery-title
+          | Здесь знают,
+          br
+          em что делают.
+      p.gallery-intro Показываем сервис таким, какой он есть: собственный техцентр, оборудованные посты и мастера, которые работают аккуратно и по делу.
+    .gallery-carousel(data-carousel, role='region', aria-roledescription='карусель', aria-label='Фотографии сервиса Pro Масло')
+      .gallery-viewport
+        .gallery-track
+          figure.gallery-slide.is-active
+            img(src='/images/garage-exterior.webp', alt='Фасад автосервиса Pro Масло на Шафировском путепроводе', loading='lazy')
+            figcaption
+              span 01
+              | Наш техцентр снаружи
+          figure.gallery-slide
+            img(src='/images/garage-lift.webp', alt='Автомобиль на подъёмнике в сервисном посту Pro Масло', loading='lazy')
+            figcaption
+              span 02
+              | Рабочий пост
+          figure.gallery-slide
+            img(src='/images/garage-parts.webp', alt='Стеллажи с маслами и фильтрами в сервисе Pro Масло', loading='lazy')
+            figcaption
+              span 03
+              | Масла и фильтры в наличии
+          figure.gallery-slide
+            img(src='/images/garage-mechanic.webp', alt='Мастер Pro Масло обслуживает двигатель автомобиля', loading='lazy')
+            figcaption
+              span 04
+              | Работа мастера
+      .gallery-controls
+        button.gallery-arrow(type='button', data-carousel-prev, aria-label='Предыдущая фотография') ←
+        .gallery-dots(aria-label='Выбрать фотографию')
+          button(type='button', data-carousel-dot='0', aria-label='Фотография 1', aria-current='true')
+          button(type='button', data-carousel-dot='1', aria-label='Фотография 2')
+          button(type='button', data-carousel-dot='2', aria-label='Фотография 3')
+          button(type='button', data-carousel-dot='3', aria-label='Фотография 4')
+        span.gallery-counter(aria-live='polite')
+          span(data-carousel-current) 01
+          |  / 04
+        button.gallery-arrow(type='button', data-carousel-next, aria-label='Следующая фотография') →
+
+section.faq.section
+  .container.faq-layout
+    h2
+      | Часто задаваемые
+      br
+      em вопросы.
+    #faq-list.faq-list
+
+section#reviews.reviews.section
+  .container.review-layout
+    .review-copy
+      p.section-kicker Реальный опыт клиентов
+      h2
+        | Отзывы наших 
+        em клиентов.
+    .review-widget
+      iframe(title='Отзывы Pro Масло на Яндекс Картах', src='https://yandex.ru/maps-reviews-widget/15685041729?comments=', loading='lazy')
+
+section#contacts.contacts
+  .container.contact-grid
+    div
+      h2
+        | Контактная
+        br
+        em информация.
+      a.contact-phone(href='tel:+79119222063') +7 911 922-20-63
+      a.contact-email(href='mailto:pro_maslo@inbox.ru') pro_maslo@inbox.ru
+    .contact-info
+      div
+        span Адрес
+        a.address-link(href='https://yandex.ru/maps/-/CXEIYL4x', target='_blank', rel='noreferrer')
+          | Шафировский путепровод, 8а
+          br
+          | Санкт-Петербург
+      div
+        span Режим работы
+        p
+          | Ежедневно
+          br
+          | 10:00 — 21:00
+      .contact-actions
+        a.button.button-accent(href='https://wa.me/79119222063', target='_blank', rel='noreferrer')
+          | WhatsApp 
+          span ↗
+        span.telegram-placeholder(aria-disabled='true') Telegram · скоро
+      a.map-link(href='https://yandex.ru/maps/-/CXEIYL4x', target='_blank', rel='noreferrer')
+        | Построить маршрут 
+        span ↗
